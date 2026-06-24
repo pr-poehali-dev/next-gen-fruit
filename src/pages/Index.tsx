@@ -4,6 +4,7 @@ import { GrainOverlay } from "@/components/grain-overlay"
 import { WorkSection } from "@/components/sections/work-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { AboutSection } from "@/components/sections/about-section"
+import { GallerySection } from "@/components/sections/gallery-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
@@ -226,7 +227,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-6 md:flex lg:gap-8">
-          {["Главная", "Преимущества", "Условия", "Об объекте", "Контакты"].map((item, index) => (
+          {["Главная", "Преимущества", "Условия", "Об объекте", "Галерея", "Контакты"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -244,7 +245,7 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(5)}>
           <span className="text-sm sm:text-base">Связаться</span>
         </MagneticButton>
       </nav>
@@ -277,7 +278,7 @@ export default function Index() {
               <MagneticButton
                 size="lg"
                 variant="primary"
-                onClick={() => scrollToSection(4)}
+                onClick={() => scrollToSection(5)}
               >
                 Оставить заявку
               </MagneticButton>
@@ -300,6 +301,7 @@ export default function Index() {
         <WorkSection />
         <ServicesSection />
         <AboutSection scrollToSection={scrollToSection} />
+        <GallerySection />
         <ContactSection />
       </div>
 
