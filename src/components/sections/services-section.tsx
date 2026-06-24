@@ -6,21 +6,21 @@ export function ServicesSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-center px-6 pt-20 md:px-12 md:pt-0 lg:px-16"
+      className="flex min-h-[100dvh] w-screen shrink-0 snap-start items-center px-5 pt-20 sm:px-8 md:px-12 md:pt-0 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-8 transition-all duration-700 md:mb-16 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h2 className="mb-1 font-sans text-3xl font-light tracking-tight text-foreground sm:text-4xl md:mb-2 md:text-6xl lg:text-7xl">
             Условия аренды
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Прозрачные и гибкие</p>
+          <p className="font-mono text-xs text-foreground/60 sm:text-sm md:text-base">/ Прозрачные и гибкие</p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
+        <div className="grid gap-6 sm:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
               title: "220 000 ₽ / мес",
@@ -85,12 +85,12 @@ function ServiceCard({
         transitionDelay: `${index * 150}ms`,
       }}
     >
-      <div className="mb-3 flex items-center gap-3">
-        <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
-        <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
+      <div className="mb-2 flex items-center gap-3 md:mb-3">
+        <div className="h-px w-6 bg-foreground/30 transition-all duration-300 group-hover:w-10 group-hover:bg-foreground/50 md:w-8 md:group-hover:w-12" />
+        <span className="font-mono text-[10px] text-foreground/60 sm:text-xs">0{index + 1}</span>
       </div>
-      <h3 className="mb-2 font-sans text-2xl font-light text-foreground md:text-3xl">{service.title}</h3>
-      <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
+      <h3 className="mb-1.5 font-sans text-xl font-light text-foreground sm:text-2xl md:text-3xl">{service.title}</h3>
+      <p className="max-w-sm text-xs leading-relaxed text-foreground/80 sm:text-sm md:text-base">{service.description}</p>
     </div>
   )
 }
