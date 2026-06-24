@@ -46,7 +46,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
               { value: "1 этаж", label: "Расположение", sublabel: "Отдельный вход с улицы", direction: "right" },
-              { value: "Своб.", label: "Назначение", sublabel: "Под торговлю и услуги", direction: "left" },
+              { value: "Свободное", label: "Назначение", sublabel: "Помещение свободного назначения", direction: "left" },
               { value: "24/7", label: "Доступ", sublabel: "Удобная парковка рядом", direction: "right" },
             ].map((stat, i) => {
               const getRevealClass = () => {
