@@ -245,9 +245,11 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(5)}>
-          <span className="text-sm sm:text-base">Связаться</span>
-        </MagneticButton>
+        {currentSection !== 4 && (
+          <MagneticButton variant="secondary" onClick={() => scrollToSection(5)}>
+            <span className="text-sm sm:text-base">Связаться</span>
+          </MagneticButton>
+        )}
       </nav>
 
       <div

@@ -52,59 +52,30 @@ export function GallerySection() {
           <p className="font-mono text-[10px] text-foreground/60 sm:text-xs md:text-base">/ Фотографии объекта</p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 md:gap-4">
-          {/* Big first photo */}
-          <div
-            className={`col-span-2 row-span-1 overflow-hidden rounded-lg transition-all duration-700 md:col-span-2 md:row-span-2 ${
-              isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-            }`}
-            style={{ transitionDelay: "100ms" }}
-          >
-            <button
-              onClick={() => openLightbox(0)}
-              className="group relative block h-44 w-full overflow-hidden sm:h-56 md:h-80 lg:h-96"
-            >
-              <img
-                src={PHOTOS[0].url}
-                alt={PHOTOS[0].caption}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:p-4">
-                <span className="font-mono text-[10px] text-white sm:text-xs">{PHOTOS[0].caption}</span>
-              </div>
-              <div className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 sm:h-8 sm:w-8">
-                <Icon name="Expand" size={14} className="text-white" />
-              </div>
-            </button>
-          </div>
-
-          {/* Remaining photos */}
-          {PHOTOS.slice(1).map((photo, i) => (
+        {/* Grid — единый формат */}
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-5">
+          {PHOTOS.map((photo, i) => (
             <div
               key={i}
               className={`overflow-hidden rounded-lg transition-all duration-700 ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
-              style={{ transitionDelay: `${200 + i * 100}ms` }}
+              style={{ transitionDelay: `${100 + i * 80}ms` }}
             >
               <button
-                onClick={() => openLightbox(i + 1)}
-                className="group relative block h-28 w-full overflow-hidden sm:h-36 md:h-[calc(50%-8px)]"
-                style={{ height: undefined }}
+                onClick={() => openLightbox(i)}
+                className="group relative block h-32 w-full overflow-hidden sm:h-40 md:h-48 lg:h-44"
               >
-                <div className="h-28 overflow-hidden sm:h-36 md:h-40 lg:h-48">
-                  <img
-                    src={photo.url}
-                    alt={photo.caption}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:p-3">
-                    <span className="font-mono text-[10px] text-white">{photo.caption}</span>
-                  </div>
-                  <div className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-black/40 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
-                    <Icon name="Expand" size={12} className="text-white" />
-                  </div>
+                <img
+                  src={photo.url}
+                  alt={photo.caption}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:p-3">
+                  <span className="font-mono text-[10px] text-white">{photo.caption}</span>
+                </div>
+                <div className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-black/40 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                  <Icon name="Expand" size={12} className="text-white" />
                 </div>
               </button>
             </div>
