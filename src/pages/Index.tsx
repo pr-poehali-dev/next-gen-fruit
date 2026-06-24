@@ -13,6 +13,7 @@ export default function Index() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
@@ -245,7 +246,7 @@ export default function Index() {
           ))}
         </div>
 
-        {currentSection !== 4 && (
+        {!isLightboxOpen && (
           <MagneticButton variant="secondary" onClick={() => scrollToSection(5)}>
             <span className="text-sm sm:text-base">Связаться</span>
           </MagneticButton>
@@ -303,7 +304,7 @@ export default function Index() {
         <WorkSection />
         <ServicesSection />
         <AboutSection scrollToSection={scrollToSection} />
-        <GallerySection />
+        <GallerySection onLightboxChange={setIsLightboxOpen} />
         <ContactSection />
       </div>
 

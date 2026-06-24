@@ -25,12 +25,12 @@ const PHOTOS = [
   },
 ]
 
-export function GallerySection() {
+export function GallerySection({ onLightboxChange }: { onLightboxChange?: (open: boolean) => void }) {
   const { ref, isVisible } = useReveal(0.2)
   const [lightbox, setLightbox] = useState<number | null>(null)
 
-  const openLightbox = (index: number) => setLightbox(index)
-  const closeLightbox = () => setLightbox(null)
+  const openLightbox = (index: number) => { setLightbox(index); onLightboxChange?.(true) }
+  const closeLightbox = () => { setLightbox(null); onLightboxChange?.(false) }
   const prev = () => setLightbox((i) => (i === null ? null : (i - 1 + PHOTOS.length) % PHOTOS.length))
   const next = () => setLightbox((i) => (i === null ? null : (i + 1) % PHOTOS.length))
 
