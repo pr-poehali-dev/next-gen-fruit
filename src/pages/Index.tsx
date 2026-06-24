@@ -182,32 +182,32 @@ export default function Index() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#1275d8"
-            colorB="#e19136"
-            speed={0.8}
-            detail={0.8}
-            blend={50}
-            coarseX={40}
-            coarseY={40}
-            mediumX={40}
-            mediumY={40}
-            fineX={40}
-            fineY={40}
+            colorA="#1a0a2e"
+            colorB="#b8860b"
+            speed={0.4}
+            detail={0.6}
+            blend={60}
+            coarseX={30}
+            coarseY={30}
+            mediumX={30}
+            mediumY={30}
+            fineX={20}
+            fineY={20}
           />
           <ChromaFlow
-            baseColor="#0066ff"
-            upColor="#0066ff"
-            downColor="#d1d1d1"
-            leftColor="#e19136"
-            rightColor="#e19136"
-            intensity={0.9}
-            radius={1.8}
-            momentum={25}
+            baseColor="#0d0d1a"
+            upColor="#c9a84c"
+            downColor="#0d0d1a"
+            leftColor="#4a0e8f"
+            rightColor="#c9a84c"
+            intensity={0.75}
+            radius={2.2}
+            momentum={18}
             maskType="alpha"
-            opacity={0.97}
+            opacity={0.95}
           />
         </Shader>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/45" />
       </div>
 
       <nav
@@ -222,7 +222,7 @@ export default function Index() {
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
             <span className="font-sans text-xl font-bold text-foreground">М</span>
           </div>
-          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">Мирный 6</span>
+          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">М 88</span>
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
